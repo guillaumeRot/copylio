@@ -1,16 +1,15 @@
-import { Title } from "@/feature/Title";
-import { HeaderLogo } from "../feature/HeaderLogo";
+import { TitleSection } from "@/feature/landing/TitleSection";
+import { HeaderLogo } from "../feature/landing/HeaderLogo";
+import { SubtitleSection } from "@/feature/landing/SubtitleSection";
+import { MailSection } from "@/feature/landing/MailSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-4">
-      <div className="h-16" />
-      {/* <HeaderLogo /> */}
-      <Title />
-    </div>
-    // <div className="bg-blue-100 py-16">
-    //   <HeaderLogo />
-    //   <Title />
-    // </div>
+      <div className="py-16">
+        <HeaderLogo />
+        <TitleSection />
+        <SubtitleSection />
+        <MailSection />
+      </div>
   );
 }
