@@ -12,7 +12,7 @@ export const MailSection = () => {
               Renseigne ton e-mail pour intégrer la liste d’attente et être au courant des nouveautés !
             </LayoutDescription>
 
-            <div className="flex relative max-w-5xl mt-2 rounded-md shadow-sm mx-auto min-w-96">
+            <div className="flex relative max-w-5xl mt-2 rounded-md mx-auto min-w-96">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                 <MdOutlineEmail />
               </div>
