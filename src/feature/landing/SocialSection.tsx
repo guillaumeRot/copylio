@@ -6,8 +6,8 @@ import Image from "next/image";
 export const SocialSection = () => {
     return (
       <div>
-        <Section className="text-center flex flex-row items-center">
-            <div className="max-w-5xl w-full gap-4 mx-auto px-4 flex relative max-w-5xl mt-2 rounded-md mx-auto min-w-96">
+        <Section className="text-center items-center">
+            <div className="w-full gap-12 mx-auto flex flex-row justify-center relative mx-auto max-w-screen-xl">
               <Image
                 src="/facebook.png"
                 width={75}
@@ -21,7 +21,7 @@ export const SocialSection = () => {
                 alt="copylio logo"
               />
             </div>
-            <LayoutDescription className="mx-auto w-full max-w-screen-xl flex flex-row justify-center text-2xl">
+            <LayoutDescription className="mx-auto w-full max-w-screen-xl flex flex-row justify-center text-2xl pt-8">
               XX rédacteurs ont déjà rejoint l’aventure !
             </LayoutDescription>
         </Section>
