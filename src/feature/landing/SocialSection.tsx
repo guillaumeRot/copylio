@@ -10,14 +10,14 @@ export const SocialSection = () => {
             <div className="w-full gap-12 mx-auto flex flex-row justify-center relative mx-auto max-w-screen-xl">
               <Image
                 src="/facebook.png"
-                width={75}
-                height={75}
+                width={40}
+                height={40}
                 alt="copylio logo"
               />
               <Image
                 src="/twitter.png"
-                width={75}
-                height={75}
+                width={40}
+                height={40}
                 alt="copylio logo"
               />
             </div>
