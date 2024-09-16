@@ -30,15 +30,11 @@ export const MailForm = (props: MailFormProps) => {
 
   const mutation = useMutation({
     mutationFn: async (values: MailType) => {
-      console.log("TEST GUI 1");
       const { data, serverError } = await createUtilisateur(values)
-      console.log("TEST GUI 2");
       if (serverError || !data) {
-        console.log("TEST GUI 3");
         toast.error(serverError);
         return;
       }
-      console.log("TEST GUI 4");
       router.refresh();
     },
   });
@@ -48,7 +44,6 @@ export const MailForm = (props: MailFormProps) => {
       form={form}
       className="mx-auto"
       onSubmit={async (values) => {
-        console.log("TEST GUI 10");
         await mutation.mutateAsync(values);
       }}
     >
