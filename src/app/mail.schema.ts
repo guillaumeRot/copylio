@@ -4,4 +4,4 @@ export const MailSchema = z.object({
   email: z.string()
 });
 
-export type MailType = z.infer<typeof ProductSchema>;
+export type MailType = z.infer<typeof MailSchema>;
