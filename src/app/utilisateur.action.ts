@@ -9,7 +9,6 @@ export const createUtilisateur = action(
   async (input, context) => {
     const user = await prisma.utilisateur.create({
       data: {
-        // email: "test2@gmail.com"
         email: input.email
       },
     });
