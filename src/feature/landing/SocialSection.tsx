@@ -1,9 +1,12 @@
-import { Button, buttonVariants } from "@/components/ui/button";
 import { Section } from "@/feature/Section";
-import { Layout, LayoutDescription, LayoutTitle } from "@/components/Layout";
+import { LayoutDescription } from "@/components/Layout";
 import Image from "next/image";
 
-export const SocialSection = () => {
+export type UtilisateursProps = {
+  usersCount: number;
+};
+
+export const SocialSection = ({ usersCount }: UtilisateursProps) => {
     return (
       <div>
         <Section className="text-center items-center">
@@ -22,7 +25,7 @@ export const SocialSection = () => {
               />
             </div>
             <LayoutDescription className="mx-auto w-full max-w-screen-xl flex flex-row justify-center text-2xl pt-8">
-              XX rédacteurs ont déjà rejoint l’aventure !
+              {usersCount} rédacteurs ont déjà rejoint l’aventure !
             </LayoutDescription>
         </Section>
       </div>
