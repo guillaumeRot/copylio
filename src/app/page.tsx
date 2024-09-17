@@ -5,9 +5,10 @@ import { MailSection } from "@/feature/landing/MailSection";
 import { SocialSection } from "@/feature/landing/SocialSection";
 import { prisma } from "@/prisma";
 
+export const revalidate = 60
+
 export default async function Home() {
-  const emailsCount = await prisma.utilisateur.count();
-  console.log("TEST GUI:" + emailsCount);
+  let emailsCount = await prisma.utilisateur.count();
 
   return (
       <div className="py-16">
