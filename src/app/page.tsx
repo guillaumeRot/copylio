@@ -7,6 +7,7 @@ import { prisma } from "@/prisma";
 
 export default async function Home() {
   const emailsCount = await prisma.utilisateur.count();
+  console.log("TEST GUI:" + emailsCount);
 
   return (
       <div className="py-16">

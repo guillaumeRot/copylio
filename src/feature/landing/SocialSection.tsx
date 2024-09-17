@@ -15,13 +15,13 @@ export const SocialSection = ({ usersCount }: UtilisateursProps) => {
                 src="/facebook.png"
                 width={40}
                 height={40}
-                alt="copylio logo"
+                alt="facebook logo"
               />
               <Image
                 src="/twitter.png"
                 width={40}
                 height={40}
-                alt="copylio logo"
+                alt="twitter logo"
               />
             </div>
             <LayoutDescription className="mx-auto w-full max-w-screen-xl flex flex-row justify-center text-2xl pt-8">
