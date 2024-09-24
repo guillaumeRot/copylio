@@ -10,11 +10,11 @@ import {
   useZodForm,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useRouter } from "next/navigation";
 import { createUtilisateur } from "./utilisateur.action";
 import { toast } from "sonner";
 import { MdOutlineEmail, MdSend } from "react-icons/md";
 import { useMutation } from "@tanstack/react-query";
+import { useQueryClient } from "@tanstack/react-query";
 
 export type MailFormProps = {
   defaultValues?: MailType;
@@ -26,7 +26,8 @@ export const MailForm = (props: MailFormProps) => {
     schema: MailSchema,
     defaultValues: props.defaultValues,
   });
-  const router = useRouter();
+
+  const queryClient = useQueryClient();
 
   const mutation = useMutation({
     mutationFn: async (values: MailType) => {
@@ -35,7 +36,8 @@ export const MailForm = (props: MailFormProps) => {
         toast.error(serverError);
         return;
       }
-      router.refresh();
+
+      await queryClient.invalidateQueries();
     },
   });
 
