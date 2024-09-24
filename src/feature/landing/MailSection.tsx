@@ -1,3 +1,5 @@
+"use client";
+
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Section } from "@/feature/Section";
 import { Layout, LayoutDescription, LayoutTitle } from "@/components/Layout";

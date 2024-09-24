@@ -1,12 +1,55 @@
+"use client";
+
 import { Section } from "@/feature/Section";
 import { LayoutDescription } from "@/components/Layout";
 import Image from "next/image";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { prisma } from "@/prisma";
+import { getEmailsCount } from "@/app/utilisateur.action";
 
 export type UtilisateursProps = {
   usersCount: number;
 };
 
-export const SocialSection = ({ usersCount }: UtilisateursProps) => {
+// export const SocialSection = ({ usersCount }: UtilisateursProps) => {
+export const SocialSection = () => {
+    const queryClient = useQueryClient();
+
+    // const emailsCount = useQuery({
+    //   queryKey: ["emailsCount"],
+    //   queryFn: async () => {
+    //     console.log("TEST GUI 1");
+    //     const emailsCount = await prisma.utilisateur.count();
+    //     console.log("TEST GUI 2", emailsCount);
+    //     return emailsCount;
+    //   },
+    // });
+
+    const emailsCount = useQuery({
+      queryKey: ["emailsCount"],
+      queryFn: async () => {
+        console.log("TEST GUI 1");
+        const { data, serverError } = await getEmailsCount({});
+        console.log("TEST GUI 2", data);
+  
+        // if (serverError || !data) {
+        //   toast.error(serverError);
+        //   return;
+        // }
+  
+        return data;
+      },
+    });
+
+    // const query = useQuery({ queryKey: ['emailsCount'],
+    //   queryFn: async () => {
+    //     console.log("TEST GUI 10");
+    //     const emailsCount = await getEmailsCount;
+    //     console.log("TEST GUI 20", emailsCount);
+    //     return emailsCount;
+    //   }
+    //  })
+
     return (
       <div>
         <Section className="text-center items-center">
@@ -25,7 +68,7 @@ export const SocialSection = ({ usersCount }: UtilisateursProps) => {
               />
             </div>
             <LayoutDescription className="mx-auto w-full max-w-screen-xl flex flex-row justify-center text-2xl pt-8">
-              {usersCount} rédacteurs ont déjà rejoint l’aventure !
+              {emailsCount.data} rédacteurs ont déjà rejoint l’aventure !
             </LayoutDescription>
         </Section>
       </div>
